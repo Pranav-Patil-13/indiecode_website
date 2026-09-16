@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Design Tokens & Color Palette Variables
+   Directly mapped from color_pallate.md
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --warm-ivory: #F7F5F1;          /* ⭐ Main site background */
+  --soft-cream: #F3F0EB;          /* Secondary background / sections */
+  --porcelain: #F9F6F2;           /* Light surfaces */
+  --warm-stone: #E3DDD4;          /* Borders / subtle panels */
+  --architectural-grey: #D8D2C8;  /* Lines / dividers */
+  --champagne-gold: #C9B79E;      /* Very subtle gold highlights */
+  --muted-gold: #A88447;          /* Primary gold accent */
+  --graphite: #2F2921;            /* Dark architectural elements */
+  --deep-black: #191917;          /* Text / buttons / dark sections */
+
+  /* Typography */
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sizing & Transitions */
+  --header-height: 64px;
+  --header-height-scrolled: 56px;
+  --container-max-width: 1320px;
+  --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Global Resets & Standards
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--header-height-scrolled);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--warm-ivory);
+  color: var(--deep-black);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   Global Motion & Scroll Reveal Animations
+   ========================================================================== */
+@keyframes revealFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealFadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealFadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes revealScaleY {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Base Reveal Utility */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.is-revealed,
+.is-revealed .reveal-init {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Utilities */
+.reveal-delay-1 { transition-delay: 0.08s; animation-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; animation-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; animation-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; animation-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; animation-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; animation-delay: 0.48s; }
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .reveal-init.is-revealed,
+  .is-revealed .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Mobile Smooth Scrolling (Disable Scroll Snap on touch devices) */
+@media (max-width: 1024px) {
+  html {
+    scroll-snap-type: none !important;
+    scroll-padding-top: calc(var(--header-height-scrolled) + 1rem);
+  }
+}
+
+

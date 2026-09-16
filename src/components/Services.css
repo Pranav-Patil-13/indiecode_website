@@ -1,0 +1,400 @@
+/* ==========================================================================
+   Services Section
+   Kept blank with services_bg.png background
+   ========================================================================== */
+.services-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header-height-scrolled));
+  min-height: calc(100vh - var(--header-height-scrolled));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--soft-cream);
+  overflow: hidden;
+  border-top: 1px solid var(--warm-stone);
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* Background image layer using assets/services_bg.png */
+.services-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/services_bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Subtle overlay layer */
+.services-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Container aligned cleanly below the header with comfortable padding */
+/* Container aligned cleanly below the header with comfortable padding */
+.services-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.25rem;
+  padding-top: calc(var(--header-height) + 1.25rem);
+  padding-bottom: 2.5rem;
+}
+
+/* Top services header spanning width */
+.services-header-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.services-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.services-title {
+  font-size: clamp(1.85rem, 2.75vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: var(--deep-black);
+  white-space: nowrap;
+}
+
+.services-title-highlight {
+  color: var(--graphite);
+  font-weight: 500;
+}
+
+/* Two-column layout below the title: description on left, services list on right */
+.services-body-row {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.services-description-col {
+  flex: 0 1 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-description {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5A5348;
+  letter-spacing: normal;
+}
+
+/* 3-Step Process Flow: 01 DISCOVER → 02 BUILD → 03 LAUNCH */
+.services-workflow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-top: 1.85rem;
+  margin-bottom: 2.2rem;
+  padding: 0.95rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(216, 210, 200, 0.65);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  max-width: 440px;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: transform 0.25s ease;
+}
+
+.workflow-step:hover {
+  transform: translateY(-1px);
+}
+
+.workflow-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted-gold);
+  letter-spacing: -0.01em;
+}
+
+.workflow-name {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--deep-black);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.workflow-divider {
+  color: #B5AFA4;
+  font-size: 0.95rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* Action CTA Chamfered Button */
+.services-action-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.services-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  height: 42px;
+  padding: 0 26px;
+  background-image: linear-gradient(90deg, #2F2921, #A88447);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  border-radius: 0.25rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+  box-shadow: 0 4px 16px rgba(47, 41, 33, 0.16);
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.services-cta-arrow {
+  color: var(--champagne-gold);
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.services-cta-primary:hover {
+  padding-right: 32px;
+  padding-left: 32px;
+  box-shadow: 0 6px 20px rgba(168, 132, 71, 0.28);
+  transform: translateY(-2px);
+}
+
+.services-cta-primary:hover .services-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Right Side Services List (Matching reference design)
+   ========================================================================== */
+.services-list-right {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(47, 41, 33, 0.09);
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.service-item:first-child {
+  border-top: 1px solid rgba(47, 41, 33, 0.09);
+}
+
+.service-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateX(6px);
+  box-shadow: 0 4px 18px rgba(47, 41, 33, 0.04);
+}
+
+/* Number: 01, 02, 03, 04 in architectural grey */
+.service-number {
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #9E9689;
+  letter-spacing: -0.02em;
+  min-width: 2.2rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.service-item:hover .service-number {
+  color: var(--muted-gold);
+  transform: scale(1.05);
+}
+
+/* Service Content */
+.service-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.service-name {
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--deep-black);
+  letter-spacing: -0.015em;
+  transition: color 0.25s ease;
+}
+
+.service-item:hover .service-name {
+  color: #000000;
+}
+
+.service-detail {
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6C6457;
+  max-width: 420px;
+}
+
+/* Circular Arrow Action Button */
+.service-arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(216, 210, 200, 0.7);
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep-black);
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.service-arrow-btn svg {
+  transition: transform 0.25s ease, stroke 0.25s ease;
+}
+
+.service-item:hover .service-arrow-btn {
+  background-color: var(--deep-black);
+  border-color: var(--deep-black);
+  color: #ffffff;
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(25, 25, 23, 0.16);
+}
+
+.service-item:hover .service-arrow-btn svg {
+  transform: translate(2px, -2px);
+  stroke: var(--champagne-gold);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .services-section {
+    height: auto;
+    min-height: auto;
+    padding-top: calc(var(--header-height-scrolled) + 2.5rem);
+    padding-bottom: 4.5rem;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .services-container {
+    height: auto;
+    min-height: auto;
+    overflow-y: visible;
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 2.5rem;
+  }
+
+  .services-title {
+    white-space: normal;
+  }
+
+  .services-body-row {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .services-description-col {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .services-list-right {
+    max-width: 100%;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding-top: calc(var(--header-height-scrolled) + 2rem);
+    padding-bottom: 4rem;
+  }
+
+  .services-container {
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 2rem;
+  }
+
+  .services-workflow-row {
+    gap: 0.65rem;
+    padding: 0.85rem 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .service-item {
+    gap: 1.25rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .service-number {
+    font-size: 1.35rem;
+    min-width: 1.75rem;
+  }
+
+  .service-name {
+    font-size: 1.15rem;
+  }
+
+  .service-arrow-btn {
+    width: 38px;
+    height: 38px;
+  }
+}

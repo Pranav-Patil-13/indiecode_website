@@ -1,0 +1,339 @@
+/* ==========================================================================
+   Solutions Section
+   Full 100vh viewport section using assets/solutions_bg.png
+   ========================================================================== */
+.solutions-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header-height-scrolled));
+  min-height: calc(100vh - var(--header-height-scrolled));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--soft-cream);
+  overflow: hidden;
+  border-top: 1px solid var(--warm-stone);
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* Background architectural image layer using assets/solutions_bg.png */
+.solutions-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/solutions_bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Subtle overlay layer for harmony with warm palette */
+.solutions-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 75% 85%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(247, 245, 240, 0.12) 100%
+  );
+}
+
+/* Solutions Container aligned below header */
+.solutions-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: calc(var(--header-height) + 2.5rem);
+  padding-bottom: 2.25rem;
+}
+
+/* ==========================================================================
+   Solutions Header Block
+   ========================================================================== */
+.solutions-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+}
+
+.solutions-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.solutions-title {
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--deep-black);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.45rem;
+}
+
+.solutions-title-highlight {
+  color: #A88447;
+  font-weight: 600;
+}
+
+.solutions-subtitle {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #6A6356;
+  line-height: 1.45;
+  max-width: 620px;
+}
+
+/* ==========================================================================
+   3x3 Solutions Cards Grid
+   ========================================================================== */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.solution-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.15rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 210, 200, 0.75);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(47, 41, 33, 0.02);
+}
+
+.solution-card:hover {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(168, 132, 71, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(47, 41, 33, 0.08);
+}
+
+/* Card Top: Icon & Title */
+.solution-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.solution-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #EFECE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep-black);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.solution-card:hover .solution-icon-wrap {
+  background-color: var(--deep-black);
+  color: var(--champagne-gold);
+  transform: scale(1.05);
+}
+
+.solution-card-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--deep-black);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  transition: color 0.25s ease;
+}
+
+.solution-card:hover .solution-card-title {
+  color: #000000;
+}
+
+/* Card Bottom: Description & Action Button */
+.solution-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.solution-card-desc {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #6C6457;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.solution-arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(216, 210, 200, 0.85);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep-black);
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.solution-arrow-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.solution-card:hover .solution-arrow-btn {
+  background-color: var(--deep-black);
+  border-color: var(--deep-black);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.solution-card:hover .solution-arrow-btn svg {
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   Bottom Tagline & CTA Bar
+   ========================================================================== */
+.solutions-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.solutions-tagline-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.solutions-accent-line {
+  width: 38px;
+  height: 2px;
+  background-color: var(--muted-gold);
+  border-radius: 1px;
+}
+
+.solutions-tagline {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #8C8476;
+  text-transform: uppercase;
+}
+
+/* Primary Chamfered Action Button */
+.solutions-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  height: 38px;
+  padding: 0 24px;
+  background-image: linear-gradient(90deg, #2F2921, #A88447);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  border-radius: 0.25rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 100%);
+  box-shadow: 0 4px 16px rgba(47, 41, 33, 0.16);
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.solutions-cta-arrow {
+  color: var(--champagne-gold);
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.solutions-cta-btn:hover {
+  padding-right: 28px;
+  padding-left: 28px;
+  box-shadow: 0 6px 20px rgba(168, 132, 71, 0.28);
+  transform: translateY(-2px);
+}
+
+.solutions-cta-btn:hover .solutions-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .solutions-section {
+    height: auto;
+    min-height: auto;
+    padding-top: calc(var(--header-height-scrolled) + 2.5rem);
+    padding-bottom: 4.5rem;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .solutions-container {
+    height: auto;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .solutions-section {
+    padding-top: calc(var(--header-height-scrolled) + 2rem);
+    padding-bottom: 4rem;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .solutions-container {
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 1.75rem;
+  }
+}

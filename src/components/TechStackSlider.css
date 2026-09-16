@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Tech Stack Marquee / Slider Styles (Preserved for reuse)
+   ========================================================================== */
+.tech-stack-slider-wrapper {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tech-stack-slider-wrapper .tech-stack-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted-gold);
+  text-transform: uppercase;
+}
+
+.tech-stack-slider-wrapper .tech-ticker-mask {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Right side fade-out mask */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 72%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 72%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.tech-stack-slider-wrapper .tech-ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+  width: max-content;
+  animation: techTickerScroll 24s linear infinite;
+  white-space: nowrap;
+}
+
+.tech-stack-slider-wrapper .tech-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-stack-slider-wrapper .tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #635B50;
+  letter-spacing: -0.01em;
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.tech-stack-slider-wrapper .tech-badge svg {
+  color: #7B7266;
+  opacity: 0.9;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-stack-slider-wrapper .tech-badge:hover {
+  color: var(--deep-black);
+}
+
+.tech-stack-slider-wrapper .tech-badge:hover svg {
+  color: var(--deep-black);
+  transform: scale(1.1);
+}
+
+.tech-stack-slider-wrapper .tech-badge::after {
+  content: "•";
+  position: absolute;
+  right: -1.05rem;
+  font-size: 0.75rem;
+  color: var(--architectural-grey);
+  pointer-events: none;
+}
+
+@keyframes techTickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

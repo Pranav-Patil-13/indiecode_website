@@ -1,0 +1,392 @@
+/* ==========================================================================
+   Hero Section
+   Kept completely blank of text as requested
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--warm-ivory);
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* Background image layer flipped horizontally */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/hero_bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+  animation: heroBgFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* Subtle architectural overlay for seamless visual integration */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--header-height);
+  padding-bottom: 3rem;
+}
+
+.hero-content-left {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   Typographic Hierarchy & Sizing Scale
+   Level 1 (Display Headline): 3.25rem - 4rem, 500 weight, Deep Black (#191917)
+   Level 2 (Secondary Headline): graphite (#2F2921), 500 weight
+   Level 3 (Body/Description): 1.0625rem (17px), 400 weight, 1.65 line-height, muted warm slate (#5A5348)
+   Level 4 (Interactive CTAs): 0.9375rem (15px), 600 weight, high contrast
+   ========================================================================== */
+
+/* Headline (Level 1) */
+.hero-title {
+  font-size: clamp(2.35rem, 4.2vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: normal;
+  color: var(--deep-black);
+  margin-bottom: 3rem;
+}
+
+.hero-title-line {
+  display: block;
+  white-space: nowrap;
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+}
+
+.hero-title-highlight {
+  display: block;
+  color: var(--graphite);
+  font-weight: 500;
+  white-space: nowrap;
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.38s backwards;
+}
+
+/* Description / Subtext (Level 2 Hierarchy) */
+.hero-description {
+  font-size: 1.0625rem; /* 17px - ideal readable body scale */
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5A5348; /* Clear step down from deep black/graphite */
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  letter-spacing: normal;
+  animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+/* CTA Group */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.62s backwards;
+}
+
+/* Primary CTA: [ Start a Project → ] (Architectural Chamfered Cut) */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  height: 42px;
+  padding: 0 25px;
+  background-image: linear-gradient(90deg, #2F2921, #A88447);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  border: none;
+  border-radius: 0.25rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(47, 41, 33, 0.18);
+  transition: padding 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.hero-btn-arrow {
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--champagne-gold);
+  transition: transform 0.25s ease;
+}
+
+.hero-btn-primary:hover {
+  padding: 0 30px;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(168, 132, 71, 0.35);
+}
+
+.hero-btn-primary:hover .hero-btn-arrow {
+  transform: translateX(3px);
+  color: #ffffff;
+}
+
+/* Secondary CTA: [ See Our Work ] */
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 24px;
+  background-color: rgba(249, 246, 242, 0.7);
+  color: var(--deep-black);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--warm-stone);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.hero-btn-secondary:hover {
+  background-color: var(--porcelain);
+  border-color: var(--architectural-grey);
+  color: var(--deep-black);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(25, 25, 23, 0.06);
+}
+
+/* ==========================================================================
+   Hero Diagonal Ribbon
+   Running from bottom-left to top-right at -45deg across the section
+   ========================================================================== */
+.hero-diagonal-ribbon {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  width: 200vmax;
+  transform: translate(-50%, -50%) rotate(324deg);
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 0;
+  background: rgba(247, 245, 241, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(201, 183, 158, 0.35);
+  border-bottom: 1px solid rgba(201, 183, 158, 0.35);
+  overflow: hidden;
+  animation: ribbonFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+}
+
+.hero-diagonal-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  /* Still on page load, then starts moving after a 2s delay at constant smooth speed */
+  animation: diagonalRibbonScroll 28s linear infinite 2s backwards;
+  will-change: transform;
+}
+
+.hero-diagonal-group {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+  padding-right: 1.85rem;
+  flex-shrink: 0;
+}
+
+.hero-diagonal-group .capability-item,
+.hero-diagonal-group .capability-dot {
+  animation: ribbonTextOnload 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+}
+
+.hero-diagonal-group .capability-item {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5A5245;
+  opacity: 0.75;
+}
+
+.hero-diagonal-group .capability-dot {
+  font-size: 0.65rem;
+  color: var(--muted-gold);
+  opacity: 0.7;
+  user-select: none;
+}
+
+@keyframes diagonalRibbonScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 5.5rem;
+  }
+
+  .hero-container {
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-content-left {
+    max-width: 100%;
+  }
+
+  .hero-cta-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Half-screen bottom capabilities ribbon fading out to the right */
+  .hero-diagonal-ribbon {
+    position: absolute;
+    top: auto;
+    bottom: 1.5rem;
+    left: 0;
+    right: auto;
+    width: 58vw;
+    max-width: 270px;
+    transform: none;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    background: rgba(247, 245, 241, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(168, 132, 71, 0.35);
+    border-bottom: 1px solid rgba(168, 132, 71, 0.35);
+    border-right: none;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    -webkit-mask-image: linear-gradient(to right, black 55%, transparent 100%);
+    mask-image: linear-gradient(to right, black 55%, transparent 100%);
+    box-shadow: 0 2px 10px rgba(47, 41, 33, 0.06);
+  }
+
+  .hero-diagonal-track {
+    animation: diagonalRibbonScroll 15s linear infinite;
+  }
+
+  .hero-diagonal-group {
+    gap: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero-diagonal-group .capability-item {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-diagonal-group .capability-dot {
+    font-size: 0.55rem;
+  }
+}
+
+/* ==========================================================================
+   Hero Onload Keyframes
+   ========================================================================== */
+@keyframes heroBgFadeIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(180deg) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(180deg) scale(1);
+  }
+}
+
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ribbonFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ribbonTextOnload {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 0.75;
+    transform: translateY(0);
+  }
+}

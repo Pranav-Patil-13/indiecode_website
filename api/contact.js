@@ -10,7 +10,12 @@ export async function sendLeadEmail({ name, email, company, phone, message }) {
   }
 
   const toEmail = process.env.RESEND_TO_EMAIL || 'hello@indiecode.in';
-  let fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+  let fromEmail = process.env.RESEND_FROM_EMAIL || 'hello@indiecode.in';
+
+  // Force hello@indiecode.in if old dev value was present
+  if (!fromEmail || fromEmail.includes('onboarding@resend.dev')) {
+    fromEmail = 'hello@indiecode.in';
+  }
 
   // Ensure fromEmail has a display name if not present
   if (!fromEmail.includes('<')) {
@@ -191,22 +196,7 @@ export async function sendLeadEmail({ name, email, company, phone, message }) {
     return { ok: res.ok, status: res.status, data };
   }
 
-  let result = await callResend(fromEmail, toEmail);
-
-  // If failed due to unverified custom domain, fallback to onboarding@resend.dev
-  if (!result.ok && fromEmail !== 'onboarding@resend.dev' && !fromEmail.includes('onboarding@resend.dev')) {
-    console.warn('Custom domain sending failed, falling back to onboarding@resend.dev:', result.data);
-    fromEmail = 'indiecode Leads <onboarding@resend.dev>';
-    result = await callResend(fromEmail, toEmail);
-  }
-
-  // If failed due to testing recipient restriction, fallback to the account email (indiecode.in@gmail.com)
-  if (!result.ok && result.data?.message && result.data.message.includes('You can only send testing emails to your own email address')) {
-    const match = result.data.message.match(/\(([^)]+)\)/);
-    const accountEmail = match ? match[1] : (process.env.RESEND_ACCOUNT_EMAIL || 'indiecode.in@gmail.com');
-    console.warn(`Recipient domain not verified yet. Delivering lead to Resend account email (${accountEmail}):`, result.data);
-    result = await callResend(fromEmail, accountEmail);
-  }
+  const result = await callResend(fromEmail, toEmail);
 
   if (!result.ok) {
     throw new Error(result.data?.message || 'Failed to send email via Resend.');

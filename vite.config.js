@@ -6,8 +6,8 @@ import { sendLeadEmail } from './api/contact.js'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   process.env.RESEND_API_KEY = env.RESEND_API_KEY || process.env.RESEND_API_KEY
-  process.env.RESEND_TO_EMAIL = env.RESEND_TO_EMAIL || process.env.RESEND_TO_EMAIL
-  process.env.RESEND_FROM_EMAIL = env.RESEND_FROM_EMAIL || process.env.RESEND_FROM_EMAIL
+  process.env.RESEND_TO_EMAIL = env.RESEND_TO_EMAIL || 'hello@indiecode.in'
+  process.env.RESEND_FROM_EMAIL = env.RESEND_FROM_EMAIL || 'hello@indiecode.in'
 
   return {
     plugins: [

@@ -1,0 +1,33 @@
+# Standard Search Engines
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI Search Engines & LLM Crawlers (Generative Engine Optimization)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Host
+Host: https://indiecode.in
+
+# Sitemaps & LLM Index
+Sitemap: https://indiecode.in/sitemap.xml
+# LLMs Text Summary: https://indiecode.in/llms.txt

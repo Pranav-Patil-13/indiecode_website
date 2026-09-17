@@ -1,10 +1,92 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
-import { ArrowUpRight, Mail, Phone, MapPin, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { 
+  ArrowUpRight, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Loader2, 
+  CheckCircle2, 
+  AlertCircle,
+  ShieldCheck,
+  FileText,
+  Lock,
+  X
+} from 'lucide-react';
 import './About.css';
+
+const LEGAL_DOCS = {
+  privacy: {
+    title: 'Privacy Policy',
+    subtitle: 'How indiecode collects, protects, and manages confidential client & project data.',
+    sections: [
+      {
+        heading: '1. Information We Collect',
+        content: 'We collect information provided directly by clients and partners, including business contact details (name, email, phone), company specifications, and project scope details submitted through our contact forms or discovery sessions.'
+      },
+      {
+        heading: '2. Use of Information',
+        content: 'Information is utilized strictly to evaluate technical feasibility, prepare architectural proposals, fulfill contractual engineering obligations, and communicate sprint progress. We never sell, rent, or monetize your information.'
+      },
+      {
+        heading: '3. Intellectual Property & Confidentiality',
+        content: 'All discovery documents, proprietary source code, wireframes, and architectural schematics shared with indiecode are protected under strict mutual non-disclosure agreements (NDAs) and role-based access protocols.'
+      },
+      {
+        heading: '4. Data Retention & Deletion Rights',
+        content: 'Clients may request the full export or permanent deletion of their correspondence and staging assets from our systems at any time by contacting hello@indiecode.in.'
+      }
+    ]
+  },
+  terms: {
+    title: 'Terms & Conditions',
+    subtitle: 'Standard commercial and engineering agreements governing engagements with indiecode.',
+    sections: [
+      {
+        heading: '1. Engagement Scope',
+        content: 'All custom software development, UI/UX design, and cloud architecture engagements are executed under mutually agreed Statements of Work (SOW) specifying deliverables, sprint milestones, and acceptance criteria.'
+      },
+      {
+        heading: '2. Intellectual Property Ownership',
+        content: 'Upon full settlement of agreed invoice milestones, all custom source code, repositories, design assets, and database schemas created for the engagement are assigned 100% to the client with unrestricted ownership.'
+      },
+      {
+        heading: '3. Warranty & Quality Assurance',
+        content: 'We offer a 30-day post-delivery bug-fixing warranty on custom deliverables to resolve unforeseen defects or deviations from approved acceptance criteria without added cost.'
+      },
+      {
+        heading: '4. Governing Law & Jurisdiction',
+        content: 'These terms are governed by and construed in accordance with the laws of India, subject to the jurisdiction of the competent courts in Nashik, Maharashtra.'
+      }
+    ]
+  },
+  security: {
+    title: 'Security & Trust',
+    subtitle: 'Our technical, architectural, and organizational commitments to enterprise security.',
+    sections: [
+      {
+        heading: '1. Secure Engineering Lifecycle',
+        content: 'We design software aligned with OWASP Top 10 guidelines. Every production release undergoes automated linting, vulnerability scanning (SAST), and mandatory peer code reviews.'
+      },
+      {
+        heading: '2. Environment & Credential Isolation',
+        content: 'Production infrastructure and staging environments are strictly decoupled. API keys, database credentials, and secrets are managed via encrypted secret vaults with zero hardcoding in source control.'
+      },
+      {
+        heading: '3. Infrastructure Resilience',
+        content: 'We employ automated CI/CD deployment pipelines, zero-downtime rolling updates, cloud database replication, and encrypted daily snapshots across cloud infrastructure.'
+      },
+      {
+        heading: '4. Team Vetting & Bilateral NDAs',
+        content: 'All indiecode engineers and designers undergo background verification and sign legally binding bilateral confidentiality agreements before touching client repositories.'
+      }
+    ]
+  }
+};
 
 export default function About() {
   const [sectionRef, isRevealed] = useScrollReveal({ threshold: 0.15 });
+  const [legalDoc, setLegalDoc] = useState(null); // 'privacy' | 'terms' | 'security' | null
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -15,6 +97,25 @@ export default function About() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'success' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
+
+  // Handle ESC key and scroll locking when legal modal is active
+  useEffect(() => {
+    if (!legalDoc) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setLegalDoc(null);
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [legalDoc]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -310,6 +411,54 @@ export default function About() {
         </div>
       </div>
 
+      {/* Three horizontal tabs attached to bottom left edge */}
+      <div className="about-bottom-tabs about-bottom-tabs-left reveal-init reveal-delay-3" aria-label="Legal and compliance links">
+        <button 
+          type="button" 
+          onClick={() => setLegalDoc('privacy')} 
+          className="about-tab-item"
+          aria-label="View Privacy Policy"
+        >
+          <span className="about-tab-icon">
+            <ShieldCheck size={15} />
+          </span>
+          <div className="about-tab-text">
+            <span className="about-tab-label">Privacy Policy</span>
+            <span className="about-tab-desc">Data & privacy</span>
+          </div>
+        </button>
+
+        <button 
+          type="button" 
+          onClick={() => setLegalDoc('terms')} 
+          className="about-tab-item"
+          aria-label="View Terms and Conditions"
+        >
+          <span className="about-tab-icon">
+            <FileText size={15} />
+          </span>
+          <div className="about-tab-text">
+            <span className="about-tab-label">Terms & Conditions</span>
+            <span className="about-tab-desc">Client agreements</span>
+          </div>
+        </button>
+
+        <button 
+          type="button" 
+          onClick={() => setLegalDoc('security')} 
+          className="about-tab-item"
+          aria-label="View Security and Trust details"
+        >
+          <span className="about-tab-icon">
+            <Lock size={15} />
+          </span>
+          <div className="about-tab-text">
+            <span className="about-tab-label">Security & Trust</span>
+            <span className="about-tab-desc">Enterprise standards</span>
+          </div>
+        </button>
+      </div>
+
       {/* Three horizontal tabs attached to bottom right edge */}
       <div className="about-bottom-tabs reveal-init reveal-delay-3">
         <a href="mailto:hello@indiecode.in" className="about-tab-item">
@@ -342,6 +491,89 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* Legal & Compliance Modal Drawer */}
+      {legalDoc && (
+        <div 
+          className="legal-modal-backdrop" 
+          onClick={() => setLegalDoc(null)}
+          role="presentation"
+        >
+          <div 
+            className="legal-modal-container" 
+            role="dialog" 
+            aria-modal="true" 
+            aria-labelledby="legal-modal-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="legal-modal-header">
+              <div className="legal-modal-tabs">
+                <button 
+                  type="button" 
+                  className={`legal-tab-btn ${legalDoc === 'privacy' ? 'is-active' : ''}`}
+                  onClick={() => setLegalDoc('privacy')}
+                >
+                  <ShieldCheck size={14} />
+                  <span>Privacy Policy</span>
+                </button>
+                <button 
+                  type="button" 
+                  className={`legal-tab-btn ${legalDoc === 'terms' ? 'is-active' : ''}`}
+                  onClick={() => setLegalDoc('terms')}
+                >
+                  <FileText size={14} />
+                  <span>Terms & Conditions</span>
+                </button>
+                <button 
+                  type="button" 
+                  className={`legal-tab-btn ${legalDoc === 'security' ? 'is-active' : ''}`}
+                  onClick={() => setLegalDoc('security')}
+                >
+                  <Lock size={14} />
+                  <span>Security & Trust</span>
+                </button>
+              </div>
+
+              <button 
+                type="button" 
+                className="legal-modal-close" 
+                onClick={() => setLegalDoc(null)} 
+                aria-label="Close modal"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="legal-modal-body">
+              <div className="legal-modal-intro">
+                <span className="legal-tag">Legal & Compliance</span>
+                <h3 id="legal-modal-title" className="legal-title">{LEGAL_DOCS[legalDoc]?.title}</h3>
+                <p className="legal-subtitle">{LEGAL_DOCS[legalDoc]?.subtitle}</p>
+              </div>
+
+              <div className="legal-modal-content">
+                {LEGAL_DOCS[legalDoc]?.sections.map((sec, idx) => (
+                  <div key={idx} className="legal-section-block">
+                    <h4 className="legal-section-heading">{sec.heading}</h4>
+                    <p className="legal-section-text">{sec.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="legal-modal-footer">
+              <span className="legal-footer-note">Effective 2026 • indiecode Software Solutions</span>
+              <button 
+                type="button" 
+                className="legal-footer-close-btn"
+                onClick={() => setLegalDoc(null)}
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

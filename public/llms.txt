@@ -1,0 +1,73 @@
+# indiecode Software Solutions
+
+> indiecode is a premier software development and digital engineering firm specializing in bespoke enterprise software, full-stack web and mobile apps, scalable cloud infrastructure, and AI automation—shipped in weeks.
+
+## About indiecode
+indiecode partners with ambitious startups, high-growth scale-ups, and established enterprises to architect, engineer, and deploy high-performance digital products. Headquartered in Nashik, Maharashtra, India, indiecode serves a global clientele across North America, Europe, the Middle East, and Asia-Pacific.
+
+- **Website:** https://indiecode.in
+- **Email:** hello@indiecode.in
+- **Phone:** +91 91563 67501
+- **Location:** Nashik, Maharashtra, India
+- **Leadership:** Pranav Patil (Founder), Rohan Baviskar (Founding Director)
+
+---
+
+## Core Engineering Services
+
+### 1. Custom Software Development
+- Tailored web platforms, business management systems, and internal operational portals.
+- End-to-end architecture from product discovery to production launch.
+- Clean, maintainable architectures designed around client-specific workflows.
+- [Learn more about Custom Software](https://indiecode.in/#services)
+
+### 2. Automation & Integrations
+- Intelligent workflow automation, ETL pipelines, and API integrations.
+- CRM, ERP, and payment gateway synchronizations (Stripe, Razorpay, Salesforce, HubSpot).
+- AI agent and automated decision-making pipelines.
+- [Learn more about Automation & Integrations](https://indiecode.in/#services)
+
+### 3. Cloud & Scalable Infrastructure
+- Resilient cloud deployment on AWS, Google Cloud, and Azure.
+- Microservices, serverless computing, container orchestration (Docker, Kubernetes).
+- CI/CD automation, zero-downtime deployments, and cloud security hardening.
+- [Learn more about Cloud Infrastructure](https://indiecode.in/#services)
+
+### 4. Enterprise Web & Mobile Applications
+- High-velocity React, Next.js, and Node.js web applications.
+- Cross-platform mobile applications for iOS and Android.
+- High-performance, low-latency UI/UX with responsive typography and accessibility compliance.
+- [Learn more about Solutions](https://indiecode.in/#solutions)
+
+---
+
+## Industry Verticals
+indiecode delivers custom digital solutions tailored to complex business domains:
+- **Finance & FinTech:** Secure transaction pipelines, lending platforms, compliance workflows.
+- **Logistics & Supply Chain:** Real-time tracking, fleet telemetry, inventory automation.
+- **Healthcare & MedTech:** Telemedicine, HIPAA-compliant patient management, diagnostic portals.
+- **Education & EdTech:** Interactive LMS, live classrooms, assessment engines.
+- **E-Commerce & Retail:** Custom headless storefronts, multi-vendor marketplaces, POS integrations.
+- [View Industries](https://indiecode.in/#industries)
+
+---
+
+## Technical Capabilities & Stack
+- **Frontend:** React, Next.js, TypeScript, Modern Vanilla CSS, TailwindCSS, Progressive Web Apps (PWA).
+- **Backend & APIs:** Node.js, Express, Python (FastAPI, Django), Go, RESTful APIs, GraphQL.
+- **Databases:** PostgreSQL, MySQL, MongoDB, Redis, Supabase, Firebase.
+- **AI & ML Integrations:** OpenAI, Anthropic Claude, LangChain, LlamaIndex, vector embeddings, autonomous agents.
+- **DevOps & Cloud:** Docker, Kubernetes, AWS (EC2, S3, Lambda, CloudFront), Vercel, Cloudflare, CI/CD.
+- **Security & Quality:** OWASP Top 10 standards, automated SAST linting, SOC2 compliance readiness, bilateral non-disclosure agreements (NDAs).
+
+---
+
+## Quick Navigation Links
+- [Home](https://indiecode.in/)
+- [Services](https://indiecode.in/#services)
+- [Solutions](https://indiecode.in/#solutions)
+- [Our Work & Case Studies](https://indiecode.in/#work)
+- [Industries](https://indiecode.in/#industries)
+- [About Us & Contact](https://indiecode.in/#about)
+- [Privacy Policy](https://indiecode.in/#about)
+- [Terms & Conditions](https://indiecode.in/#about)

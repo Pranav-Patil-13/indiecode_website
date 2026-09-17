@@ -56,7 +56,7 @@ export default function Header({ onOpenContact }) {
         </a>
 
         {/* Desktop Navigation Menu */}
-        <nav className="desktop-nav" aria-label="Main Navigation">
+        <nav className="desktop-nav" aria-label="Main Navigation" itemScope itemType="https://schema.org/SiteNavigationElement">
           <ul className="nav-menu">
             {navLinks.map((link, index) => {
               const linkId = link.href.replace('#', '');
@@ -71,8 +71,9 @@ export default function Header({ onOpenContact }) {
                     href={link.href}
                     className={`nav-link ${isActive ? 'active' : ''}`}
                     aria-current={isActive ? 'page' : undefined}
+                    itemProp="url"
                   >
-                    {link.label}
+                    <span itemProp="name">{link.label}</span>
                   </a>
                 </li>
               );

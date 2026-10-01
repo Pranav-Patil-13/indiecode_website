@@ -345,3 +345,39 @@ a.modal-footer-item:hover {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Error Alert & Loading State
+   ========================================================================== */
+
+.modal-alert-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(220, 38, 38, 0.07);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.8rem;
+  color: #b91c1c;
+  line-height: 1.45;
+}
+
+.modal-submit-btn.is-loading {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.modal-submit-btn:disabled {
+  pointer-events: none;
+}
+
+@keyframes modalSpinnerRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.modal-btn-spinner {
+  animation: modalSpinnerRotate 0.8s linear infinite;
+  flex-shrink: 0;
+}

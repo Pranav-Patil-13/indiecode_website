@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -7,22 +7,113 @@ import OurWork from './components/OurWork';
 import Industries from './components/Industries';
 import About from './components/About';
 import ContactModal from './components/ContactModal';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 
 export default function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState(() => {
+    return window.location.pathname.toLowerCase();
+  });
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname.toLowerCase());
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  const navigate = (path) => {
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
+      setCurrentPath(path.toLowerCase());
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const handleOpenContact = () => setIsContactModalOpen(true);
 
+  // Check if current route is Blog List (/blog)
+  if (currentPath === '/blog' || currentPath === '/blog/') {
+    return (
+      <div className="app-root">
+        <BlogList 
+          onOpenContact={handleOpenContact} 
+          onNavigate={navigate} 
+        />
+        <ContactModal 
+          isOpen={isContactModalOpen} 
+          onClose={() => setIsContactModalOpen(false)} 
+        />
+      </div>
+    );
+  }
+
+  // Check if current route is an Individual Blog Post (/blog/:slug)
+  if (currentPath.startsWith('/blog/')) {
+    const slug = currentPath.replace(/^\/blog\//, '').replace(/\/$/, '');
+    return (
+      <div className="app-root">
+        <BlogPost 
+          slug={slug} 
+          onOpenContact={handleOpenContact} 
+          onNavigate={navigate} 
+        />
+        <ContactModal 
+          isOpen={isContactModalOpen} 
+          onClose={() => setIsContactModalOpen(false)} 
+        />
+      </div>
+    );
+  }
+
+  // Check if current route is Privacy Policy
+  if (currentPath === '/privacy' || currentPath === '/privacy-policy') {
+    return (
+      <div className="app-root">
+        <PrivacyPolicy 
+          onOpenContact={handleOpenContact} 
+          onNavigate={navigate} 
+        />
+        <ContactModal 
+          isOpen={isContactModalOpen} 
+          onClose={() => setIsContactModalOpen(false)} 
+        />
+      </div>
+    );
+  }
+
+  // Check if current route is Terms & Conditions
+  if (currentPath === '/terms' || currentPath === '/terms-and-conditions' || currentPath === '/terms-of-service') {
+    return (
+      <div className="app-root">
+        <Terms 
+          onOpenContact={handleOpenContact} 
+          onNavigate={navigate} 
+        />
+        <ContactModal 
+          isOpen={isContactModalOpen} 
+          onClose={() => setIsContactModalOpen(false)} 
+        />
+      </div>
+    );
+  }
+
+  // Default: Main Landing Page
   return (
     <div className="app-root">
-      <Header onOpenContact={handleOpenContact} />
+      <Header onOpenContact={handleOpenContact} onNavigate={navigate} />
       <main>
         <Hero onOpenContact={handleOpenContact} />
         <Services onOpenContact={handleOpenContact} />
         <Solutions onOpenContact={handleOpenContact} />
         <OurWork onOpenContact={handleOpenContact} />
         <Industries onOpenContact={handleOpenContact} />
-        <About />
+        <About onNavigate={navigate} />
       </main>
 
       {/* Slide-out Contact Drawer Modal */}
@@ -33,3 +124,4 @@ export default function App() {
     </div>
   );
 }
+

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>indiecode Engineering &amp; Strategy Blog</title>
+    <link>https://indiecode.in/blog</link>
+    <description>In-depth technical guides, software architecture insights, UI/UX engineering principles, and enterprise modernization case studies by indiecode Software Solutions.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://indiecode.in/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://indiecode.in/logo.png</url>
+      <title>indiecode Software Solutions</title>
+      <link>https://indiecode.in/</link>
+    </image>
+
+    <item>
+      <title>Building Autonomous AI Agents &amp; Workflow Automation for Enterprise</title>
+      <link>https://indiecode.in/blog/building-ai-agents-automation-workflows-enterprise</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/building-ai-agents-automation-workflows-enterprise</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Development</category>
+      <description><![CDATA[An architectural guide to deploying autonomous LLM agents, deterministic tool calling, and human-in-the-loop validation to automate complex enterprise workflows.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/ai_automation_agents.jpg" length="135000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>Microservices vs. Modular Monolith: Choosing the Right Architecture for Scale</title>
+      <link>https://indiecode.in/blog/microservices-vs-modular-monolith-scaling-startups</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/microservices-vs-modular-monolith-scaling-startups</guid>
+      <pubDate>Tue, 29 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Development</category>
+      <description><![CDATA[Why high-velocity engineering teams are embracing modular monoliths over premature microservices to ship faster, eliminate distributed system failures, and scale gracefully.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/modular_architecture.jpg" length="128000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>Cloud Infrastructure &amp; DevOps: How to Cut Cloud Spend by 60% with 99.99% Uptime</title>
+      <link>https://indiecode.in/blog/scalable-cloud-infrastructure-cost-optimization</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/scalable-cloud-infrastructure-cost-optimization</guid>
+      <pubDate>Mon, 28 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Business</category>
+      <description><![CDATA[Battle-tested DevOps strategies for container auto-scaling, intelligent Redis caching, compute right-sizing, and Terraform infrastructure-as-code to slash monthly cloud bills.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/cloud_devops_infra.jpg" length="124000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>How to Plan Your Custom Software Project (The Right Way)</title>
+      <link>https://indiecode.in/blog/how-to-plan-your-custom-software-project</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/how-to-plan-your-custom-software-project</guid>
+      <pubDate>Mon, 28 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Development</category>
+      <description><![CDATA[A practical, battle-tested blueprint to planning, scoping, and executing a bespoke custom software project without budget blowouts or missed launch deadlines.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/software_plan.jpg" length="120000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>How Enterprise Design Systems Accelerate Feature Delivery by 4x</title>
+      <link>https://indiecode.in/blog/design-systems-that-scale-enterprise-ui-ux</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/design-systems-that-scale-enterprise-ui-ux</guid>
+      <pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Design</category>
+      <description><![CDATA[A systematic approach to tokenized design systems, Figma-to-React pipelines, and accessible UI component libraries that maintain flawless brand consistency across platforms.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/design_system_tokens.jpg" length="132000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>Building Secure, SOC2 &amp; GDPR-Compliant SaaS Architectures from Day 1</title>
+      <link>https://indiecode.in/blog/fintech-security-compliance-saas-architecture</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/fintech-security-compliance-saas-architecture</guid>
+      <pubDate>Sat, 26 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Product</category>
+      <description><![CDATA[A comprehensive security blueprint covering PostgreSQL Row-Level Security, tokenized audit trails, end-to-end encryption, and multi-tenant isolation for high-stakes SaaS.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/saas_security_vault.jpg" length="145000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>Website vs Web Application — What's the Difference?</title>
+      <link>https://indiecode.in/blog/website-vs-web-application-difference</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/website-vs-web-application-difference</guid>
+      <pubDate>Mon, 21 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Rohan Baviskar</dc:creator>
+      <category>Business</category>
+      <description><![CDATA[Understand the fundamental differences in architecture, user interactivity, development costs, and ROI so you can select the right technology foundation for your business.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/laptop_shadow.jpg" length="130000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>10 UI/UX Principles That Make Business Software Actually Usable</title>
+      <link>https://indiecode.in/blog/10-ui-ux-principles-business-software-usable</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/10-ui-ux-principles-business-software-usable</guid>
+      <pubDate>Tue, 15 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Design</category>
+      <description><![CDATA[Enterprise tools don't have to be clunky or slow. Discover the 10 human-centered design principles we use to engineer high-velocity software that teams genuinely love using.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/design_studio.jpg" length="125000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>Web App vs Mobile App: Which One Should You Build First?</title>
+      <link>https://indiecode.in/blog/web-app-vs-mobile-app-which-one-to-build-first</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/web-app-vs-mobile-app-which-one-to-build-first</guid>
+      <pubDate>Thu, 10 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Rohan Baviskar</dc:creator>
+      <category>Product</category>
+      <description><![CDATA[A comprehensive strategic breakdown of development costs, launch timelines, distribution friction, and user acquisition to help you choose the best starting point.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/mobile_hardware.jpg" length="110000" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>From Manual Processes to a Custom ERP: A Real Client Story</title>
+      <link>https://indiecode.in/blog/from-manual-processes-to-custom-erp-client-story</link>
+      <guid isPermaLink="true">https://indiecode.in/blog/from-manual-processes-to-custom-erp-client-story</guid>
+      <pubDate>Thu, 03 Sep 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Pranav Patil</dc:creator>
+      <category>Case Study</category>
+      <description><![CDATA[How indiecode engineered a tailor-made ERP and workflow automation platform that eliminated manual spreadsheets, accelerated order fulfillment, and delivered 5-month ROI.]]></description>
+      <enclosure url="https://indiecode.in/assets/blog/erp_architecture.jpg" length="140000" type="image/jpeg" />
+    </item>
+  </channel>
+</rss>

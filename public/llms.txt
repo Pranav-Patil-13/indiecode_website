@@ -1,6 +1,6 @@
 # indiecode Software Solutions
 
-> indiecode is a premier software development and digital engineering firm specializing in bespoke enterprise software, full-stack web and mobile apps, scalable cloud infrastructure, and AI automation—shipped in weeks.
+> indiecode is a premier software engineering firm building bespoke enterprise software, full-stack web and mobile apps, scalable cloud infrastructure, and AI automation—shipped in weeks.
 
 ## About indiecode
 indiecode partners with ambitious startups, high-growth scale-ups, and established enterprises to architect, engineer, and deploy high-performance digital products. Headquartered in Nashik, Maharashtra, India, indiecode serves a global clientele across North America, Europe, the Middle East, and Asia-Pacific.
@@ -9,7 +9,7 @@ indiecode partners with ambitious startups, high-growth scale-ups, and establish
 - **Email:** hello@indiecode.in
 - **Phone:** +91 91563 67501
 - **Location:** Nashik, Maharashtra, India
-- **Leadership:** Pranav Patil (Founder), Rohan Baviskar (Founding Director)
+- **Leadership:** Pranav Patil (Founder & Technical Architect), Rohan Baviskar (Founding Director)
 
 ---
 
@@ -19,12 +19,12 @@ indiecode partners with ambitious startups, high-growth scale-ups, and establish
 - Tailored web platforms, business management systems, and internal operational portals.
 - End-to-end architecture from product discovery to production launch.
 - Clean, maintainable architectures designed around client-specific workflows.
-- [Learn more about Custom Software](https://indiecode.in/#services)
+- [Learn more about Custom Software Development](https://indiecode.in/#services)
 
 ### 2. Automation & Integrations
-- Intelligent workflow automation, ETL pipelines, and API integrations.
+- Intelligent workflow automation, ETL data pipelines, and API integrations.
 - CRM, ERP, and payment gateway synchronizations (Stripe, Razorpay, Salesforce, HubSpot).
-- AI agent and automated decision-making pipelines.
+- AI agent workflows and automated business logic engines.
 - [Learn more about Automation & Integrations](https://indiecode.in/#services)
 
 ### 3. Cloud & Scalable Infrastructure
@@ -34,27 +34,70 @@ indiecode partners with ambitious startups, high-growth scale-ups, and establish
 - [Learn more about Cloud Infrastructure](https://indiecode.in/#services)
 
 ### 4. Enterprise Web & Mobile Applications
-- High-velocity React, Next.js, and Node.js web applications.
+- High-velocity React, Next.js, TypeScript, and Node.js web applications.
 - Cross-platform mobile applications for iOS and Android.
 - High-performance, low-latency UI/UX with responsive typography and accessibility compliance.
 - [Learn more about Solutions](https://indiecode.in/#solutions)
 
 ---
 
-## Industry Verticals
-indiecode delivers custom digital solutions tailored to complex business domains:
-- **Finance & FinTech:** Secure transaction pipelines, lending platforms, compliance workflows.
-- **Logistics & Supply Chain:** Real-time tracking, fleet telemetry, inventory automation.
-- **Healthcare & MedTech:** Telemedicine, HIPAA-compliant patient management, diagnostic portals.
-- **Education & EdTech:** Interactive LMS, live classrooms, assessment engines.
-- **E-Commerce & Retail:** Custom headless storefronts, multi-vendor marketplaces, POS integrations.
-- [View Industries](https://indiecode.in/#industries)
+## Technical Guides & Engineering Blog Articles
+
+### 1. How to Plan Your Custom Software Project (The Right Way)
+- **URL:** https://indiecode.in/blog/how-to-plan-your-custom-software-project
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** MVP scoping, eliminating scope creep, typed RPC/OpenAPI contracts, modular domain architectures, and two-week agile sprint cycles.
+
+### 2. Website vs Web Application — What's the Difference?
+- **URL:** https://indiecode.in/blog/website-vs-web-application-difference
+- **Author:** Rohan Baviskar (Founding Director)
+- **Key Concepts:** Architectural comparison, state management, static/SSR content delivery vs dynamic databases, role-based access control (RBAC), and ROI frameworks.
+
+### 3. 10 UI/UX Principles That Make Business Software Actually Usable
+- **URL:** https://indiecode.in/blog/10-ui-ux-principles-business-software-usable
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** Information density vs progressive disclosure, command palettes (Cmd+K), keyboard navigation, micro-animations, and high-velocity B2B workflows.
+
+### 4. Web App vs Mobile App: Which One Should You Build First?
+- **URL:** https://indiecode.in/blog/web-app-vs-mobile-app-which-one-to-build-first
+- **Author:** Rohan Baviskar (Founding Director)
+- **Key Concepts:** Development cost breakdown, time-to-market comparison, App Store review friction, Progressive Web Apps (PWAs), and sensor hardware use cases.
+
+### 5. From Manual Processes to a Custom ERP: A Real Client Story
+- **URL:** https://indiecode.in/blog/from-manual-processes-to-custom-erp-client-story
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** Case study on logistics workflow modernization, replacing manual spreadsheets with real-time cloud ERP, 95% error reduction, and 5-month ROI.
+
+### 6. Building Autonomous AI Agents & Workflow Automation for Enterprise
+- **URL:** https://indiecode.in/blog/building-ai-agents-automation-workflows-enterprise
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** Enterprise autonomous AI agents, deterministic tool calling with Pydantic validation, human-in-the-loop review queues, multi-agent state machines, and semantic caching.
+
+### 7. Microservices vs. Modular Monolith: Choosing the Right Architecture for Scale
+- **URL:** https://indiecode.in/blog/microservices-vs-modular-monolith-scaling-startups
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** Architectural trade-offs between distributed microservices and modular monoliths, domain-driven design (DDD), in-memory event buses, and avoiding distributed transaction pitfalls.
+
+### 8. Cloud Infrastructure & DevOps: How to Cut Cloud Spend by 60% with 99.99% Uptime
+- **URL:** https://indiecode.in/blog/scalable-cloud-infrastructure-cost-optimization
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** Cloud cost engineering, container auto-scaling with Terraform IaC, Redis caching layers, staging environment teardown crons, and edge CDN storage tiering.
+
+### 9. How Enterprise Design Systems Accelerate Feature Delivery by 4x
+- **URL:** https://indiecode.in/blog/design-systems-that-scale-enterprise-ui-ux
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** Tokenized design systems, Figma-to-React pipelines, WCAG 2.1 AA accessibility standards, eliminating arbitrary magic values, and living component documentation.
+
+### 10. Building Secure, SOC2 & GDPR-Compliant SaaS Architectures from Day 1
+- **URL:** https://indiecode.in/blog/fintech-security-compliance-saas-architecture
+- **Author:** Pranav Patil (Founder & Technical Architect)
+- **Key Concepts:** SaaS security blueprints, PostgreSQL Row-Level Security (RLS) for mathematical multi-tenant isolation, tamper-proof cryptographic audit log streaming, and envelope encryption.
 
 ---
 
 ## Technical Capabilities & Stack
 - **Frontend:** React, Next.js, TypeScript, Modern Vanilla CSS, TailwindCSS, Progressive Web Apps (PWA).
-- **Backend & APIs:** Node.js, Express, Python (FastAPI, Django), Go, RESTful APIs, GraphQL.
+- **Backend & APIs:** Node.js, Express, Python (FastAPI, Django), Go, RESTful APIs, GraphQL, tRPC.
 - **Databases:** PostgreSQL, MySQL, MongoDB, Redis, Supabase, Firebase.
 - **AI & ML Integrations:** OpenAI, Anthropic Claude, LangChain, LlamaIndex, vector embeddings, autonomous agents.
 - **DevOps & Cloud:** Docker, Kubernetes, AWS (EC2, S3, Lambda, CloudFront), Vercel, Cloudflare, CI/CD.
@@ -64,10 +107,12 @@ indiecode delivers custom digital solutions tailored to complex business domains
 
 ## Quick Navigation Links
 - [Home](https://indiecode.in/)
+- [Blog & Engineering Insights](https://indiecode.in/blog)
 - [Services](https://indiecode.in/#services)
 - [Solutions](https://indiecode.in/#solutions)
 - [Our Work & Case Studies](https://indiecode.in/#work)
 - [Industries](https://indiecode.in/#industries)
 - [About Us & Contact](https://indiecode.in/#about)
-- [Privacy Policy](https://indiecode.in/#about)
-- [Terms & Conditions](https://indiecode.in/#about)
+- [RSS Feed](https://indiecode.in/rss.xml)
+- [Privacy Policy](https://indiecode.in/privacy)
+- [Terms & Conditions](https://indiecode.in/terms)

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>indiecode | Redirecting...</title>
+  <script>
+    // GitHub Pages / Static Hosting SPA Redirect Script
+    (function() {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      } else {
+        // Store current path and load index.html
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        window.location.replace('/' + (path.startsWith('/') ? path.substring(1) : path));
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family: system-ui, -apple-system, sans-serif; text-align: center; margin-top: 20vh; color: #191917;">
+    Loading indiecode...
+  </p>
+</body>
+</html>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ onOpenContact }) {
+export default function Header({ onOpenContact, onNavigate }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -44,13 +44,35 @@ export default function Header({ onOpenContact }) {
     { label: 'Our Work', href: '#work' },
     { label: 'Industries', href: '#industries' },
     { label: 'About Us', href: '#about' },
+    { label: 'Blog', href: '/blog', isRoute: true },
   ];
+
+  const handleLinkClick = (e, link) => {
+    if (link.isRoute) {
+      e.preventDefault();
+      if (onNavigate) {
+        onNavigate(link.href);
+      } else {
+        window.location.assign(link.href);
+      }
+    }
+  };
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-container">
         {/* Brand Logo */}
-        <a href="#" className="brand-logo" aria-label="indiecode home">
+        <a 
+          href="#" 
+          className="brand-logo" 
+          aria-label="indiecode home"
+          onClick={(e) => {
+            if (window.location.pathname !== '/' && onNavigate) {
+              e.preventDefault();
+              onNavigate('/');
+            }
+          }}
+        >
           <img src="/logo.png" alt="indiecode logo" className="brand-logo-img" />
           <span className="brand-title">indiecode</span>
         </a>
@@ -72,6 +94,7 @@ export default function Header({ onOpenContact }) {
                     className={`nav-link ${isActive ? 'active' : ''}`}
                     aria-current={isActive ? 'page' : undefined}
                     itemProp="url"
+                    onClick={(e) => handleLinkClick(e, link)}
                   >
                     <span itemProp="name">{link.label}</span>
                   </a>
@@ -116,7 +139,10 @@ export default function Header({ onOpenContact }) {
                 <a
                   href={link.href}
                   className={`mobile-nav-link ${isActive ? 'active' : ''}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setIsMobileMenuOpen(false);
+                    handleLinkClick(e, link);
+                  }}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}

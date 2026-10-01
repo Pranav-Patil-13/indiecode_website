@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   FileText,
   Lock,
+  BookOpen,
   X
 } from 'lucide-react';
 import './About.css';
@@ -84,9 +85,9 @@ const LEGAL_DOCS = {
   }
 };
 
-export default function About() {
+export default function About({ onNavigate }) {
   const [sectionRef, isRevealed] = useScrollReveal({ threshold: 0.15 });
-  const [legalDoc, setLegalDoc] = useState(null); // 'privacy' | 'terms' | 'security' | null
+  const [legalDoc, setLegalDoc] = useState(null); // 'security' | null
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -411,11 +412,26 @@ export default function About() {
         </div>
       </div>
 
-      {/* Three horizontal tabs attached to bottom left edge */}
-      <div className="about-bottom-tabs about-bottom-tabs-left reveal-init reveal-delay-3" aria-label="Legal and compliance links">
+      {/* Four horizontal tabs attached to bottom left edge */}
+      <div className="about-bottom-tabs about-bottom-tabs-left reveal-init reveal-delay-3" aria-label="Company, legal and insights links">
         <button 
           type="button" 
-          onClick={() => setLegalDoc('privacy')} 
+          onClick={() => onNavigate ? onNavigate('/blog') : window.location.assign('/blog')} 
+          className="about-tab-item"
+          aria-label="Read our Blog and Engineering Insights"
+        >
+          <span className="about-tab-icon">
+            <BookOpen size={15} />
+          </span>
+          <div className="about-tab-text">
+            <span className="about-tab-label">Blog & Insights</span>
+            <span className="about-tab-desc">Tech & strategy</span>
+          </div>
+        </button>
+
+        <button 
+          type="button" 
+          onClick={() => onNavigate ? onNavigate('/privacy') : window.location.assign('/privacy')} 
           className="about-tab-item"
           aria-label="View Privacy Policy"
         >
@@ -430,7 +446,7 @@ export default function About() {
 
         <button 
           type="button" 
-          onClick={() => setLegalDoc('terms')} 
+          onClick={() => onNavigate ? onNavigate('/terms') : window.location.assign('/terms')} 
           className="about-tab-item"
           aria-label="View Terms and Conditions"
         >
@@ -511,7 +527,10 @@ export default function About() {
                 <button 
                   type="button" 
                   className={`legal-tab-btn ${legalDoc === 'privacy' ? 'is-active' : ''}`}
-                  onClick={() => setLegalDoc('privacy')}
+                  onClick={() => {
+                    setLegalDoc(null);
+                    if (onNavigate) onNavigate('/privacy');
+                  }}
                 >
                   <ShieldCheck size={14} />
                   <span>Privacy Policy</span>
@@ -519,7 +538,10 @@ export default function About() {
                 <button 
                   type="button" 
                   className={`legal-tab-btn ${legalDoc === 'terms' ? 'is-active' : ''}`}
-                  onClick={() => setLegalDoc('terms')}
+                  onClick={() => {
+                    setLegalDoc(null);
+                    if (onNavigate) onNavigate('/terms');
+                  }}
                 >
                   <FileText size={14} />
                   <span>Terms & Conditions</span>

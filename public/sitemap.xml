@@ -1,39 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://indiecode.in/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/logo.png</image:loc>
+      <image:title>indiecode Software Solutions</image:title>
+      <image:caption>Custom Software Development, AI Automations and Enterprise Cloud Systems</image:caption>
+    </image:image>
   </url>
+
+  <url>
+    <loc>https://indiecode.in/blog</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/blog_hero_overlay.jpg</image:loc>
+      <image:title>indiecode Engineering and Strategy Insights</image:title>
+      <image:caption>Ideas and blueprints for builders, businesses, and digital leaders</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/how-to-plan-your-custom-software-project</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/software_plan.jpg</image:loc>
+      <image:title>How to Plan Your Custom Software Project (The Right Way)</image:title>
+      <image:caption>Software engineering discovery, MVP scoping, and architecture roadmap by indiecode</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/website-vs-web-application-difference</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/laptop_shadow.jpg</image:loc>
+      <image:title>Website vs Web Application: Key Differences &amp; Architecture Guide</image:title>
+      <image:caption>Cost breakdown and technology framework for websites vs web applications</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/10-ui-ux-principles-business-software-usable</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/design_studio.jpg</image:loc>
+      <image:title>10 UI/UX Principles for High-Velocity Business Software</image:title>
+      <image:caption>Human-centered design principles for enterprise SaaS and internal dashboards</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/web-app-vs-mobile-app-which-one-to-build-first</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/mobile_hardware.jpg</image:loc>
+      <image:title>Web App vs Mobile App: Which One to Build First?</image:title>
+      <image:caption>Development timelines, store review friction, and ROI comparison</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/from-manual-processes-to-custom-erp-client-story</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/erp_architecture.jpg</image:loc>
+      <image:title>From Manual Spreadsheets to a Custom ERP: Real Client Story</image:title>
+      <image:caption>Warehouse automation and enterprise workflow platform case study</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/building-ai-agents-automation-workflows-enterprise</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/ai_automation_agents.jpg</image:loc>
+      <image:title>Building Autonomous AI Agents &amp; Workflow Automation for Enterprise</image:title>
+      <image:caption>Architectural guide to deploying autonomous LLM agents and deterministic tool calling</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/microservices-vs-modular-monolith-scaling-startups</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/modular_architecture.jpg</image:loc>
+      <image:title>Microservices vs. Modular Monolith: Choosing the Right Architecture for Scale</image:title>
+      <image:caption>Domain-driven design and modular monolith architectures for high-growth software</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/scalable-cloud-infrastructure-cost-optimization</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/cloud_devops_infra.jpg</image:loc>
+      <image:title>Cloud Infrastructure &amp; DevOps: How to Cut Cloud Spend by 60% with 99.99% Uptime</image:title>
+      <image:caption>DevOps strategies for container auto-scaling, Redis caching, and Terraform IaC</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/design-systems-that-scale-enterprise-ui-ux</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/design_system_tokens.jpg</image:loc>
+      <image:title>How Enterprise Design Systems Accelerate Feature Delivery by 4x</image:title>
+      <image:caption>Tokenized design systems, Figma-to-React pipelines, and WCAG accessibility standards</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/blog/fintech-security-compliance-saas-architecture</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://indiecode.in/assets/blog/saas_security_vault.jpg</image:loc>
+      <image:title>Building Secure, SOC2 &amp; GDPR-Compliant SaaS Architectures from Day 1</image:title>
+      <image:caption>PostgreSQL Row-Level Security, tokenized audit trails, and multi-tenant SaaS encryption</image:caption>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://indiecode.in/#services</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+
   <url>
     <loc>https://indiecode.in/#solutions</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+
   <url>
     <loc>https://indiecode.in/#work</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
+
   <url>
     <loc>https://indiecode.in/#industries</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://indiecode.in/#about</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/privacy</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://indiecode.in/terms</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

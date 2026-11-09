@@ -12,9 +12,6 @@
   justify-content: center;
   background-color: var(--soft-cream);
   overflow: hidden;
-  border-top: 1px solid var(--warm-stone);
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
 }
 
 /* Background architectural image layer */
@@ -425,16 +422,16 @@ button.about-tab-item:hover .about-tab-label {
 
 .about-headline {
   font-size: clamp(1.85rem, 2.7vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.25;
-  letter-spacing: -0.025em;
+  letter-spacing: normal;
   color: var(--deep-black);
   margin: 0;
 }
 
 .about-headline .about-highlight {
   color: var(--muted-gold);
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
 }
 
@@ -648,8 +645,6 @@ button.about-tab-item:hover .about-tab-label {
     align-items: stretch;
     padding-top: calc(var(--header-height-scrolled) + 2.5rem);
     padding-bottom: 0;
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
   }
 
   .about-container {

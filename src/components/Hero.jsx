@@ -4,46 +4,33 @@ import './Hero.css';
 export default function Hero({ onOpenContact }) {
   return (
     <section id="hero" className="hero-section" aria-label="Hero Section">
-      {/* Flipped background image layer */}
+      {/* 3D Fluted Slat background layer */}
       <div className="hero-bg" />
 
-      {/* Subtle overlay for gradient and palette harmony */}
+      {/* Luminous centered radial spotlight for optimal typography contrast */}
       <div className="hero-overlay" />
-      
-      {/* Diagonal capabilities line running from bottom-left to top-right at 324deg */}
-      <div className="hero-diagonal-ribbon" aria-hidden="true">
-        <div className="hero-diagonal-track">
-          {[1, 2, 3, 4].map((groupNum) => (
-            <div key={groupNum} className="hero-diagonal-group" aria-hidden={groupNum > 1}>
-              <span className="capability-item">Software</span>
-              <span className="capability-dot">•</span>
-              <span className="capability-item">Automation</span>
-              <span className="capability-dot">•</span>
-              <span className="capability-item">Integrations</span>
-              <span className="capability-dot">•</span>
-              <span className="capability-item">Web Apps</span>
-              <span className="capability-dot">•</span>
-              <span className="capability-item">Business Software</span>
-              <span className="capability-dot">•</span>
-              <span className="capability-item">Digital Products</span>
-              <span className="capability-dot">•</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Left-aligned hero content */}
+      {/* Centered Minimal Architectural Hero Content */}
       <div className="container hero-container">
-        <div className="hero-content-left">
+        <div className="hero-content-center">
+          {/* Display Headline */}
           <h1 className="hero-title">
-            <span className="hero-title-line">Custom softwares&nbsp;—</span>
-            <span className="hero-title-highlight">shipped in weeks.</span>
+            <span className="hero-title-line">We build production software</span>
+            <span className="hero-title-highlight">
+              and ship in{' '}
+              <span className="hero-strike" aria-label="not months">
+                months
+              </span>{' '}
+              weeks.
+            </span>
           </h1>
 
+          {/* Value Proposition Description */}
           <p className="hero-description">
             We architect and build high-performance web apps, enterprise software, and scalable digital products tailored to your business goals.
           </p>
 
+          {/* Dual Action CTAs */}
           <div className="hero-cta-group">
             <button 
               type="button" 
@@ -54,8 +41,8 @@ export default function Hero({ onOpenContact }) {
               <span>Start a Project</span>
               <span className="hero-btn-arrow">→</span>
             </button>
-            <a href="#work" className="hero-btn-secondary">
-              See Our Work
+            <a href="#solutions" className="hero-btn-secondary">
+              Explore Solutions
             </a>
           </div>
         </div>

@@ -11,33 +11,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--soft-cream);
+  background-color: var(--warm-ivory);
   overflow: hidden;
-  border-top: 1px solid var(--warm-stone);
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
 }
 
-/* Background architectural image layer using assets/projects_bg.png */
-.work-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/assets/projects_bg.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-/* Subtle overlay layer for harmony with warm palette */
+/* Background layers removed per minimal ivory design */
+.work-bg,
 .work-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(247, 245, 240, 0.1) 100%
-  );
+  display: none;
 }
 
 /* Section anchor for smooth navigation */
@@ -103,10 +84,10 @@
 
 .work-title {
   font-size: clamp(1.55rem, 2.1vw, 2.15rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.15;
   color: var(--deep-black);
-  letter-spacing: -0.025em;
+  letter-spacing: normal;
   margin: 0;
   white-space: nowrap;
 }
@@ -114,7 +95,7 @@
 .work-title-highlight {
   color: #A88447;
   font-weight: 600;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* 3x2 Project Cards Grid */
@@ -444,8 +425,6 @@
     min-height: auto;
     padding-top: calc(var(--header-height-scrolled) + 2.5rem);
     padding-bottom: 4.5rem;
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
   }
 
   .work-container {

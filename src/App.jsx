@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Services from './components/Services';
 import Solutions from './components/Solutions';
-import OurWork from './components/OurWork';
 import Industries from './components/Industries';
 import About from './components/About';
 import ContactModal from './components/ContactModal';
@@ -109,9 +107,7 @@ export default function App() {
       <Header onOpenContact={handleOpenContact} onNavigate={navigate} />
       <main>
         <Hero onOpenContact={handleOpenContact} />
-        <Services onOpenContact={handleOpenContact} />
         <Solutions onOpenContact={handleOpenContact} />
-        <OurWork onOpenContact={handleOpenContact} />
         <Industries onOpenContact={handleOpenContact} />
         <About onNavigate={navigate} />
       </main>

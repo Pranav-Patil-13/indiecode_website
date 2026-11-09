@@ -1,68 +1,47 @@
 /* ==========================================================================
-   Industries Section
-   Architectural flipped background, 2x5 industry cards grid, and bottom CTA banner
+   Industries Section: Spacious Editorial Multi-Row Grid
    ========================================================================== */
 
 .industries-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - var(--header-height-scrolled));
-  min-height: calc(100vh - var(--header-height-scrolled));
+  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--soft-cream);
-  overflow: hidden;
-  border-top: 1px solid var(--warm-stone);
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  background-color: var(--warm-ivory);
+  padding: 5.5rem 0 6.5rem;
+  overflow: visible;
 }
 
-/* Background architectural image layer using assets/projects_bg.png flipped upside down */
-.industries-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/assets/projects_bg.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transform: scaleY(-1);
-}
-
-/* Subtle overlay layer for harmony with warm palette */
+/* Background layers removed per minimal ivory design */
+.industries-bg,
 .industries-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(247, 245, 240, 0.1) 100%
-  );
+  display: none;
 }
 
-/* Container with auto-aligned vertical spacing (header and footer not stuck to edges) */
+/* Container with generous max-width and breathing room */
 .industries-container {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1320px;
-  height: 100%;
+  max-width: 1280px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 0.75rem 2rem;
-  gap: 0.75rem;
+  gap: 2.25rem;
+  padding: 0 2rem;
 }
 
 /* ==========================================================================
-   Header Block: Split Title (Left) and Subtitle/Tagline (Right)
+   Header Block
    ========================================================================== */
 .industries-top-bar {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: flex-start;
+  margin-bottom: 0.25rem;
   flex-shrink: 0;
 }
 
@@ -73,64 +52,32 @@
 }
 
 .industries-eyebrow {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   color: var(--muted-gold);
   text-transform: uppercase;
   display: inline-block;
+  margin-bottom: 0.45rem;
 }
 
 .industries-title {
-  font-size: clamp(1.5rem, 2.1vw, 2.15rem);
-  font-weight: 600;
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  font-weight: 400;
   line-height: 1.15;
   color: var(--deep-black);
-  letter-spacing: -0.025em;
+  letter-spacing: normal;
+  font-style: normal;
   margin: 0;
-  white-space: nowrap;
-}
-
-.industries-title-highlight {
-  color: #A88447;
-  font-weight: 600;
-  font-style: italic;
-  margin-left: 1px;
-}
-
-/* Minimal Statement (pure typography, no card box) */
-.industries-statement-minimal {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  max-width: 460px;
-}
-
-.industries-statement-lead {
-  font-size: 1.02rem;
-  font-weight: 600;
-  color: var(--deep-black);
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  margin: 0;
-}
-
-.industries-statement-sub {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #635C50;
-  line-height: 1.5;
-  margin: 0;
-  letter-spacing: -0.005em;
 }
 
 /* ==========================================================================
-   2x5 Industry Cards Grid
+   3-Column Industry Cards Grid (3x3 + 1 Full-Width Spotlight)
    ========================================================================== */
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem 0.65rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   width: 100%;
 }
 
@@ -138,25 +85,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #FFFFFF;
-  border-radius: 12px;
-  border: 1px solid rgba(227, 221, 212, 0.75);
-  box-shadow: 0 4px 14px rgba(47, 41, 33, 0.04);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 14px;
+  border: 1px solid rgba(216, 210, 200, 0.85);
+  box-shadow: 0 4px 16px rgba(47, 41, 33, 0.03);
   overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .industry-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(47, 41, 33, 0.09);
-  border-color: rgba(168, 132, 71, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(47, 41, 33, 0.09);
+  border-color: rgba(168, 132, 71, 0.45);
+  background: rgba(255, 255, 255, 0.98);
 }
 
-/* Card Body (Top content) */
+.industry-card:focus-visible {
+  outline: 2px solid var(--muted-gold);
+  outline-offset: 2px;
+}
+
+/* Card Body (Top Content) */
 .industry-card-body {
-  padding: 0.65rem 0.8rem;
+  padding: 1.15rem 1.25rem;
   display: flex;
   flex-direction: column;
 }
@@ -165,62 +121,66 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0;
+  gap: 0.65rem;
 }
 
 .industry-title-row {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.65rem;
   min-width: 0;
 }
 
 .industry-icon-wrap {
-  color: #A88447;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background-color: #EFECE6;
+  color: var(--deep-black);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.22s ease;
+  transition: all 0.25s ease;
 }
 
 .industry-card:hover .industry-icon-wrap {
-  transform: scale(1.08);
+  background-color: var(--deep-black);
+  color: var(--champagne-gold);
+  transform: scale(1.05);
 }
 
 .industry-title {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--deep-black);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.3;
+  letter-spacing: normal;
+  font-style: normal;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .industry-number {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: #A59E92;
-  letter-spacing: 0.05em;
+  font-family: var(--font-primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--muted-gold);
+  letter-spacing: 0.08em;
   flex-shrink: 0;
   transition: color 0.22s ease;
 }
 
 .industry-card:hover .industry-number {
-  color: var(--muted-gold);
+  color: #8C6A32;
 }
 
 /* Card Thumbnail Image Container & Image */
 .industry-thumbnail-wrap {
   width: 100%;
-  height: auto;
-  aspect-ratio: 5 / 3;
+  height: 200px;
   background-color: #EFECE6;
-  border-top: 1px solid rgba(227, 221, 212, 0.65);
+  border-top: 1px solid rgba(227, 221, 212, 0.7);
   position: relative;
   overflow: hidden;
 }
@@ -231,20 +191,17 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.35s ease;
 }
 
 .industry-card:hover .industry-thumbnail-img {
-  transform: scale(1.08);
-  filter: brightness(0.8);
+  transform: scale(1.06);
 }
 
-/* Card Thumbnail Placeholder (for remaining cards) */
 .industry-thumbnail-placeholder {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 2;
+  height: 200px;
   background: linear-gradient(180deg, rgba(250, 248, 245, 0.8) 0%, rgba(239, 235, 228, 0.7) 100%);
   border-top: 1px solid rgba(227, 221, 212, 0.65);
   position: relative;
@@ -262,249 +219,185 @@
   background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.7) 0%, transparent 75%);
 }
 
-/* Hover Description Overlay on Image Area */
+/* Hover Description Overlay */
 .industry-desc-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(22, 20, 18, 0.88);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: linear-gradient(
+    180deg,
+    rgba(22, 20, 18, 0.2) 0%,
+    rgba(22, 20, 18, 0.92) 100%
+  );
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.65rem 0.75rem;
+  align-items: flex-end;
+  padding: 1.25rem;
   opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 3;
 }
 
 .industry-card:hover .industry-desc-overlay {
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 
 .industry-hover-desc {
-  font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #F7F5F1;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #FFFFFF;
   margin: 0;
-  text-align: center;
-  letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
-   Bottom Banner: "Don't see your industry?" + CTA + 3 Metrics
+   Full-Width Spotlight 10th Card (Other Businesses)
    ========================================================================== */
-.industries-bottom-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.25rem;
-  padding: 0.95rem 2rem;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(227, 221, 212, 0.85);
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(47, 41, 33, 0.04);
-  flex-shrink: 0;
+.industry-card-spotlight {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 243, 236, 0.92) 100%);
+  border: 1px solid rgba(168, 132, 71, 0.4);
+  box-shadow: 0 8px 24px rgba(47, 41, 33, 0.05);
 }
 
-/* Part 1: Copy + CTA Action */
-.industries-banner-left {
-  display: flex;
+.industry-card-spotlight:hover {
+  border-color: rgba(168, 132, 71, 0.65);
+  box-shadow: 0 16px 36px rgba(47, 41, 33, 0.1);
+  transform: translateY(-4px);
+}
+
+.industry-spotlight-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
-  justify-content: space-between;
   gap: 2.5rem;
-  flex: 1;
+  padding: 2.25rem 2.75rem;
 }
 
-.industries-banner-copy {
+.industry-spotlight-content {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  max-width: 520px;
+  align-items: flex-start;
+  gap: 0.85rem;
 }
 
-.industries-banner-heading {
-  font-size: 1.05rem;
+.industry-spotlight-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.industry-spotlight-pill {
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background-color: rgba(168, 132, 71, 0.15);
+  color: #8C6A32;
+}
+
+.industry-spotlight-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 400;
   color: var(--deep-black);
-  margin: 0;
-  letter-spacing: -0.015em;
-}
-
-.industries-banner-subtext {
-  font-size: 0.76rem;
-  color: #736C61;
-  line-height: 1.4;
+  line-height: 1.25;
+  letter-spacing: normal;
+  font-style: normal;
   margin: 0;
 }
 
-.industries-banner-action {
-  flex-shrink: 0;
+.industry-spotlight-desc {
+  font-size: 0.95rem;
+  color: #6C6457;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 620px;
 }
 
-.industries-cta-btn {
+.industry-spotlight-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  height: 38px;
-  padding: 0 24px;
-  background-image: linear-gradient(90deg, #2F2921, #A88447);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: var(--deep-black);
   color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 500;
-  line-height: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  border-radius: 0.25rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 100%);
-  box-shadow: 0 4px 16px rgba(47, 41, 33, 0.16);
-  border: none;
-  outline: none;
-  font-family: inherit;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--deep-black);
   cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
-.industries-cta-arrow {
-  color: var(--champagne-gold);
-  font-size: 0.95rem;
-  line-height: 1;
-  transition: transform 0.25s ease;
-}
-
-.industries-cta-btn:hover {
-  padding-right: 28px;
-  padding-left: 28px;
-  box-shadow: 0 6px 20px rgba(168, 132, 71, 0.28);
+.industry-spotlight-cta:hover {
+  background-color: #000000;
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(25, 25, 23, 0.15);
 }
 
-.industries-cta-btn:hover .industries-cta-arrow {
-  transform: translateX(4px);
+.industry-spotlight-arrow {
+  color: var(--champagne-gold);
+  transition: transform 0.2s ease;
 }
 
-/* Vertical divider between Part 1 and Part 2 */
-.industries-banner-divider {
-  width: 1px;
-  height: 38px;
-  background-color: rgba(216, 210, 200, 0.9);
-  flex-shrink: 0;
+.industry-spotlight-cta:hover .industry-spotlight-arrow {
+  transform: translateX(3px);
 }
 
-/* Part 2: Key Metrics Stats */
-.industries-banner-stats {
-  display: flex;
-  align-items: center;
-  gap: 2.25rem;
-  flex-shrink: 0;
+.industry-spotlight-media {
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(47, 41, 33, 0.08);
 }
 
-.industry-stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.industry-stat-number {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--deep-black);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.industry-stat-label {
-  font-size: 0.62rem;
-  font-weight: 500;
-  color: #8A8275;
-  white-space: nowrap;
-  margin-top: 0.2rem;
+.industry-spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
-@media (max-width: 1200px) {
-  .industries-section {
-    height: auto;
-    min-height: auto;
-    padding-top: calc(var(--header-height-scrolled) + 2.5rem);
-    padding-bottom: 4.5rem;
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
-  }
-
-  .industries-container {
-    height: auto;
-    min-height: auto;
-    justify-content: flex-start;
-    padding-top: 0;
-    padding-bottom: 0;
-    gap: 1.75rem;
-  }
-
-  .industries-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 860px) {
-  .industries-section {
-    padding-top: calc(var(--header-height-scrolled) + 2rem);
-    padding-bottom: 4rem;
-  }
-
-  .industries-top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.85rem;
-  }
-
+@media (max-width: 992px) {
   .industries-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
-  .industries-bottom-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem 1rem;
+  .industry-spotlight-inner {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+    gap: 1.5rem;
   }
 
-  .industries-banner-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.85rem;
-    width: 100%;
-  }
-
-  .industries-banner-divider {
-    display: none;
-  }
-
-  .industries-banner-stats {
-    width: 100%;
-    justify-content: space-between;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(227, 221, 212, 0.7);
+  .industry-spotlight-media {
+    height: 180px;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
+  .industries-section {
+    padding: 4rem 0 5rem;
+  }
+
   .industries-grid {
     grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .industry-thumbnail-wrap {
+    height: 170px;
+  }
+
+  .industry-spotlight-inner {
+    padding: 1.25rem;
   }
 }

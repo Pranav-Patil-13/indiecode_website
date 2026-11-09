@@ -114,29 +114,69 @@ export default function Industries({ onOpenContact }) {
       <div className="industries-overlay" />
 
       <div className="container industries-container">
-        {/* Top Bar: Header (Left) and Value Statement (Right) */}
+        {/* Top Header */}
         <div className="industries-top-bar reveal-init">
           <div className="industries-header">
             <span className="industries-eyebrow">INDUSTRIES</span>
             <h2 className="industries-title">
-              Software built around <span className="industries-title-highlight">your industry.</span>
+              For every industry.
             </h2>
-          </div>
-
-          <div className="industries-statement-minimal">
-            <p className="industries-statement-lead">
-              Every industry has unique challenges.
-            </p>
-            <p className="industries-statement-sub">
-              We build custom software, web and mobile applications that solve real problems and create real value.
-            </p>
           </div>
         </div>
 
-        {/* 2x5 Grid of 10 Industry Cards */}
+        {/* 3x3 Grid of 9 Industry Cards + 1 Full-Width Spotlight Card */}
         <div className="industries-grid" role="list">
           {industriesData.map((item, index) => {
             const IconComponent = item.icon;
+            const isSpotlight = index === 9;
+
+            if (isSpotlight) {
+              return (
+                <article
+                  key={item.id}
+                  className="industry-card industry-card-spotlight reveal-init"
+                  style={{
+                    transitionDelay: `${0.035 * index}s`,
+                    animationDelay: `${0.035 * index}s`
+                  }}
+                  role="listitem"
+                >
+                  <div className="industry-spotlight-inner">
+                    <div className="industry-spotlight-content">
+                      <div className="industry-spotlight-tag-row">
+                        <span className="industry-number">010</span>
+                        <span className="industry-spotlight-pill">Custom Engineering</span>
+                      </div>
+                      <h3 className="industry-spotlight-title">
+                        Got a unique use case or emerging domain?
+                      </h3>
+                      <p className="industry-spotlight-desc">
+                        We build bespoke, production-ready systems tailored around proprietary workflows, deep-tech integrations, and novel operational requirements.
+                      </p>
+                      <button
+                        type="button"
+                        className="industry-spotlight-cta"
+                        onClick={onOpenContact}
+                        aria-label="Start a Project for Custom Domains"
+                      >
+                        <span>Start a Project</span>
+                        <span className="industry-spotlight-arrow">→</span>
+                      </button>
+                    </div>
+
+                    <div className="industry-spotlight-media">
+                      <img
+                        src={item.image}
+                        alt="Custom domain preview"
+                        className="industry-spotlight-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </article>
+              );
+            }
+
             return (
               <article 
                 key={item.id} 
@@ -146,6 +186,9 @@ export default function Industries({ onOpenContact }) {
                   animationDelay: `${0.035 * index}s` 
                 }}
                 role="listitem"
+                onClick={onOpenContact}
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter') onOpenContact(); }}
               >
                 {/* Top content block */}
                 <div className="industry-card-body">
@@ -187,50 +230,6 @@ export default function Industries({ onOpenContact }) {
               </article>
             );
           })}
-        </div>
-
-        {/* Floating Bottom Banner with CTA & Key Metrics */}
-        <div className="industries-bottom-banner reveal-init reveal-delay-3">
-          {/* Part 1: Copy + CTA Action */}
-          <div className="industries-banner-left">
-            <div className="industries-banner-copy">
-              <h3 className="industries-banner-heading">Don't see your industry?</h3>
-              <p className="industries-banner-subtext">
-                We work with businesses of all sizes. Tell us about your idea — we'll help you build the right solution.
-              </p>
-            </div>
-
-            <div className="industries-banner-action">
-              <button 
-                type="button" 
-                onClick={onOpenContact} 
-                className="industries-cta-btn" 
-                aria-label="Discuss Your Project"
-              >
-                <span>Discuss Your Project</span>
-                <span className="industries-cta-arrow">→</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Divider between Part 1 and Part 2 */}
-          <span className="industries-banner-divider" aria-hidden="true" />
-
-          {/* Part 2: Key Metrics Stats */}
-          <div className="industries-banner-stats">
-            <div className="industry-stat-item">
-              <span className="industry-stat-number">50+</span>
-              <span className="industry-stat-label">Happy Clients</span>
-            </div>
-            <div className="industry-stat-item">
-              <span className="industry-stat-number">10+</span>
-              <span className="industry-stat-label">Industries</span>
-            </div>
-            <div className="industry-stat-item">
-              <span className="industry-stat-number">100%</span>
-              <span className="industry-stat-label">Custom Solutions</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

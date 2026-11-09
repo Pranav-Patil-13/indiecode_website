@@ -10,28 +10,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--soft-cream);
+  background-color: var(--warm-ivory);
   overflow: hidden;
-  border-top: 1px solid var(--warm-stone);
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
 }
 
-/* Background image layer using assets/services_bg.png */
-.services-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/assets/services_bg.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-/* Subtle overlay layer */
+/* Background layers removed per minimal ivory design */
+.services-bg,
 .services-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  display: none;
 }
 
 /* Container aligned cleanly below the header with comfortable padding */
@@ -68,7 +54,7 @@
 
 .services-title {
   font-size: clamp(1.85rem, 2.75vw, 2.7rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: normal;
   color: var(--deep-black);
@@ -326,8 +312,6 @@
     min-height: auto;
     padding-top: calc(var(--header-height-scrolled) + 2.5rem);
     padding-bottom: 4.5rem;
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
   }
 
   .services-container {
